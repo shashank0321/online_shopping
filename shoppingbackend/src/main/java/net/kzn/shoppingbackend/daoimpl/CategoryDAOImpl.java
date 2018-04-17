@@ -11,11 +11,7 @@ import net.kzn.shoppingbackend.dto.Category;
 @Repository("categoryDAO")
 public class CategoryDAOImpl implements CategoryDAO{
 
-	@Override
-	public List<Category> list() {
-		// TODO Auto-generated method stub
-		return categories;
-	}
+	
 
 	private static List<Category> categories = new ArrayList<>();
 	
@@ -46,6 +42,23 @@ public class CategoryDAOImpl implements CategoryDAO{
 		
 	
 	
+	}
+	
+	@Override
+	public List<Category> list() {
+		// TODO Auto-generated method stub
+		return categories;
+	}
+
+	@Override
+	public Category get(int id) {
+		
+		//enchanced for loop
+		for(Category category:categories){
+			if(category.getId()==id) return category;			
+			}
+	
+		return null;
 	}
 	
 }
